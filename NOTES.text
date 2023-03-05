@@ -1,0 +1,6 @@
+Only change is to permanently disable backup file generation.
+Sometimes, when I ran mg via sudo, mg would create backup files
+for the file(s) I was editing. Which is undesirable for
+system config files.
+
+-- ukim 05-mar-2023
