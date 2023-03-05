@@ -585,7 +585,7 @@ filewrite(int f, int n)
 /*
  * Save the contents of the current buffer back into its associated file.
  */
-static int	makebackup = TRUE;
+static int	makebackup = FALSE;
 
 /* ARGSUSED */
 int
@@ -631,7 +631,7 @@ buffsave(struct buffer *bp)
 		    "Save anyway")) != TRUE)
 			return (s);
 	}
-	
+
 	if (makebackup && (bp->b_flag & BFBAK)) {
 		s = fbackupfile(bp->b_fname);
 		/* hard error */
@@ -662,10 +662,10 @@ buffsave(struct buffer *bp)
 int
 makebkfile(int f, int n)
 {
-	if (f & FFARG)
-		makebackup = n > 0;
-	else
-		makebackup = !makebackup;
+	/* if (f & FFARG) */
+	/* 	makebackup = n > 0; */
+	/* else */
+	/* 	makebackup = !makebackup; */
 	ewprintf("Backup files %sabled", makebackup ? "en" : "dis");
 	return (TRUE);
 }
